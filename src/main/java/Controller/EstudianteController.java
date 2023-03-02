@@ -19,7 +19,7 @@ public class EstudianteController {
 
     @Autowired
     private Repository.EstudianteRepository EstudianteRepository;
-    
+
     @GetMapping(value = "/estudiantes")
     public List<Estudiante> getEstudiantes() {
         return EstudianteRepository.findAll();
@@ -28,21 +28,20 @@ public class EstudianteController {
     @PutMapping(value = "/saveEstudiante")
     public String saveEstudiante(@RequestBody Estudiante Estudiante) {
         EstudianteRepository.save(Estudiante);
-        return "Grabó OK";
-
+        return "Guardado correctemente";
     }
 
     @PatchMapping(value = "/updateEstudiante")
     public String updateEstudiantes(@RequestBody Estudiante Estudiante) {
         // encontrar Estudiante
-        // EstudianteReository.(Estudiante);
-        return "Update";
+        EstudianteRepository.save(Estudiante);
+        return "Actualizado correctamente";
     }
-    
+
     @DeleteMapping(value = "/deleteEstudiante")
     public String deleteEstudiantes(@RequestBody long idEstudiante) {
         // encontrar Estudiante
         EstudianteRepository.deleteById(idEstudiante);
-        return "Deleted";
+        return "Removido correctamente";
     }
 }
