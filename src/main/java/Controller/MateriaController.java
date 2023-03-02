@@ -31,21 +31,21 @@ public class MateriaController {
     @PutMapping(value = "/saveMateria")
     public String saveMaterias(@RequestBody Materia materia) {
         materiaReository.save(materia);
-        return "Saved";
+        return "Guardado correctemente";
     }
-    
+
     @PatchMapping(value = "/updateMateria")
     public String updateMaterias(@RequestBody Materia materia) {
         // encontrar materia
         materiaReository.save(materia);
-        return "Update";
+        return "Actualizado correctamente";
     }
-    
+
     @DeleteMapping(value = "/deleteMateria")
     public String deleteMaterias(@RequestBody long idMateria) {
         // encontrar materia
         materiaReository.deleteById(idMateria);
-        return "Deleted";
+        return "Removido correctamente";
     }
 
 }
